@@ -148,7 +148,7 @@ highlight default link tyStructure Structure
 highlight default link tyVarDecl Function
 highlight default link tyExecution Special
 highlight default link tyMacro Macro
-highlight default link tyConditional Conditional
+highlight default link tyControl Conditional
 highlight default link tyRepeat Repeat
 
 delfunction s:syntax_keyword
