@@ -45,7 +45,6 @@ let s:ty_syntax_keywords = {
     \ ,               "for"
     \ ,               "loop"
     \ ,               "catch"
-    \ ,               "return"
     \ ,               "break"
     \ ,               "continue"]
     \ , 'tyStructure': ["struct"
@@ -55,16 +54,17 @@ let s:ty_syntax_keywords = {
     \ ,                  "opaque"]
     \ , 'tyVarDecl': ["let"
     \ ,                "const"
+    \ ,                "pub"
     \ ,                "comptime"
     \ ,                "contract"
     \ ,                "local"]
     \ , 'tyDummyVariable': ["_"]
     \ , 'tyKeyword': ["fn"
+    \ ,               "return"
     \ ,                "try"
     \ ,                "of"
     \ ,                "in"
     \ ,                "test"
-    \ ,                "pub"
     \ ,                "import"
     \ ,                "bench"]
     \ , 'tyMacro': ["defer"
