@@ -20,10 +20,11 @@ let s:ty_syntax_keywords = {
     \ ,             "d32"
     \ ,             "d64"
     \ ,             "d128"
-    \ ,             "i8"
-    \ ,             "i16"
-    \ ,             "i32"
-    \ ,             "i64"
+    \ ,             "u1"
+    \ ,             "u8"
+    \ ,             "u16"
+    \ ,             "u32"
+    \ ,             "u64"
     \ ,             "usize"
     \ ,             "i8"
     \ ,             "i16"
@@ -34,6 +35,7 @@ let s:ty_syntax_keywords = {
     \ ,             "f64"
     \ ,             "f128"
     \ ,             "type"
+    \ ,             "char"
     \ ,             "any"
     \ ,             "frame"]
     \ , 'tyConditional': ["if"
@@ -142,6 +144,7 @@ highlight default link tyNumber Number
 highlight default link tyArrowCharacter tyOperator
 highlight default link tyOperator Operator
 highlight default link tyStructure Structure
+highlight default link tyVarDecl Function
 highlight default link tyExecution Special
 highlight default link tyMacro Macro
 highlight default link tyConditional Conditional
