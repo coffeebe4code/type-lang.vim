@@ -17,6 +17,19 @@ let s:ty_syntax_keywords = {
     \ ,              "undefined"
     \ ,              "never"]
     \ , 'tyType': ["bool"
+    \ ,             "d32"
+    \ ,             "d64"
+    \ ,             "d128"
+    \ ,             "i8"
+    \ ,             "i16"
+    \ ,             "i32"
+    \ ,             "i64"
+    \ ,             "usize"
+    \ ,             "i8"
+    \ ,             "i16"
+    \ ,             "i32"
+    \ ,             "i64"
+    \ ,             "isize"
     \ ,             "f32"
     \ ,             "f64"
     \ ,             "f128"
@@ -36,10 +49,13 @@ let s:ty_syntax_keywords = {
     \ , 'tyVarDecl': ["let"
     \ ,                "const"
     \ ,                "comptime"
+    \ ,                "contract"
     \ ,                "local"]
     \ , 'tyDummyVariable': ["_"]
     \ , 'tyKeyword': ["fn"
     \ ,                "try"
+    \ ,                "of"
+    \ ,                "in"
     \ ,                "test"
     \ ,                "pub"
     \ ,                "bench"]
@@ -51,6 +67,9 @@ let s:ty_syntax_keywords = {
     \ ,              "async"
     \ ,              "nosuspend"
     \ ,              "await"
+    \ ,              "frame"
+    \ ,              "trait"
+    \ ,              "impl"
     \ ,              "suspend"
     \ ,              "resume"
     \ ,              "export"
@@ -68,7 +87,7 @@ endfunction
 call s:syntax_keyword(s:ty_syntax_keywords)
 
 syntax match tyType "\v<[iu][1-9]\d*>"
-syntax match tyOperator display "\V\[-+/*=^&?|!><%~]"
+syntax match tyOperator display "\V\[#$-+/*=^&?|!><%~]"
 syntax match tyArrowCharacter display "\V=>"
 
 "                                     12_34  (. but not ..)? (12_34)?     (exponent  12_34)?
