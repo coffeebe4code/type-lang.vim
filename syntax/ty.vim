@@ -38,7 +38,7 @@ let s:ty_syntax_keywords = {
     \ ,             "frame"]
     \ , 'tyConditional': ["if"
     \ ,                    "else"
-    \ ,                    "switch"]
+    \ ,                    "match"]
     \ , 'tyRepeat': ["while"
     \ ,               "for"
     \ ,               "loop"]
@@ -58,6 +58,7 @@ let s:ty_syntax_keywords = {
     \ ,                "in"
     \ ,                "test"
     \ ,                "pub"
+    \ ,                "import"
     \ ,                "bench"]
     \ , 'tyExecution': ["return"
     \ ,                  "break"
@@ -74,8 +75,8 @@ let s:ty_syntax_keywords = {
     \ ,              "resume"
     \ ,              "export"
     \ ,              "macro"
+    \ ,              "catch"
     \ ,              "extern"]
-    \ , 'tyPreProc': ["catch"]
     \ }
 
 function! s:syntax_keyword(dict)
@@ -137,7 +138,6 @@ highlight default link tyEscape Special
 highlight default link tyEscapeUnicode tyEscape
 highlight default link tyEscapeError Error
 highlight default link tyBoolean Boolean
-highlight default link tyConstant Constant
 highlight default link tyNumber Number
 highlight default link tyArrowCharacter tyOperator
 highlight default link tyOperator Operator
@@ -145,12 +145,7 @@ highlight default link tyStructure Structure
 highlight default link tyExecution Special
 highlight default link tyMacro Macro
 highlight default link tyConditional Conditional
-highlight default link tyComparatorWord Keyword
 highlight default link tyRepeat Repeat
-highlight default link tySpecial Special
-highlight default link tyVarDecl Function
-highlight default link tyPreProc PreProc
-highlight default link tyException Exception
 
 delfunction s:syntax_keyword
 
