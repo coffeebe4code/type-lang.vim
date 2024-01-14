@@ -97,7 +97,7 @@ syntax match tyArrowCharacter display "\V=>"
 "                                     12_34  (. but not ..)? (12_34)?     (exponent  12_34)?
 syntax match tyDecNumber display   "\v<\d%(_?\d)*%(\.\.@!)?%(\d%(_?\d)*)?%([eE][+-]?\d%(_?\d)*)?"
 
-syntax match tyCharacterInvalid display contained /b\?'\zs[\n\r\t']\ze'/
+" syntax match tyCharacterInvalid display contained /b\?'\zs[\n\r\t']\ze'/
 syntax match tyCharacterInvalidUnicode display contained /b'\zs[^[:cntrl:][:graph:][:alnum:][:space:]]\ze'/
 syntax match tyCharacter /b'\([^\\]\|\\\(.\|x\x\{2}\)\)'/ contains=tyEscape,tyEscapeError,tyCharacterInvalid,tyCharacterInvalidUnicode
 syntax match tyCharacter /'\([^\\]\|\\\(.\|x\x\{2}\|u\x\{4}\|U\x\{6}\)\)'/ contains=tyEscape,tyEscapeUnicode,tyEscapeError,tyCharacterInvalid
@@ -113,6 +113,7 @@ syntax region tyMultilineString matchgroup=tyMultilineStringDelimiter start="c\?
 syntax keyword tyTodo contained TODO
 
 syntax region tyString matchgroup=tyStringDelimiter start=+c\?"+ skip=+\\\\\|\\"+ end=+"+ oneline contains=tyEscape,tyEscapeUnicode,tyEscapeError,@Spell
+syntax region tyString matchgroup=tyStringDelimiter start=+c\?'+ skip=+\\\\\|\\'+ end=+'+ oneline contains=tyEscape,tyEscapeUnicode,tyEscapeError,@Spell
 syntax match tyEscapeError   display contained /\\./
 syntax match tyEscape        display contained /\\\([nrt\\'"]\|x\x\{2}\)/
 syntax match tyEscapeUnicode display contained /\\\(u\x\{4}\|U\x\{6}\)/
@@ -146,7 +147,6 @@ highlight default link tyArrowCharacter tyOperator
 highlight default link tyOperator Operator
 highlight default link tyStructure Structure
 highlight default link tyVarDecl Function
-highlight default link tyExecution Special
 highlight default link tyMacro Macro
 highlight default link tyControl Conditional
 highlight default link tyRepeat Repeat
