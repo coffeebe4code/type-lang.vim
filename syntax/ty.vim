@@ -11,11 +11,11 @@ let s:cpo_save = &cpo
 set cpo&vim
 
 let s:ty_syntax_keywords = {
-    \   'tyBoolean': ["true"
-    \ ,                "false"]
-    \ , 'tyVoids': ["void"
-    \ ,              "undefined"
-    \ ,              "never"]
+    \   'tyVals': ["true"
+    \ ,            "false"
+    \ ,            "void"
+    \ ,            "undefined"
+    \ ,            "never"]
     \ , 'tyType': ["bool"
     \ ,             "d32"
     \ ,             "d64"
@@ -38,14 +38,19 @@ let s:ty_syntax_keywords = {
     \ ,             "char"
     \ ,             "any"
     \ ,             "frame"]
-    \ , 'tyConditional': ["if"
-    \ ,                    "else"
-    \ ,                    "match"]
-    \ , 'tyRepeat': ["while"
+    \ , 'tyControl': ["if"
+    \ ,               "else"
+    \ ,               "match"
+    \ ,               "while"
     \ ,               "for"
-    \ ,               "loop"]
+    \ ,               "loop"
+    \ ,               "catch"
+    \ ,               "return"
+    \ ,               "break"
+    \ ,               "continue"]
     \ , 'tyStructure': ["struct"
     \ ,                  "error"
+    \ ,                  "self"
     \ ,                  "packed"
     \ ,                  "opaque"]
     \ , 'tyVarDecl': ["let"
@@ -62,9 +67,6 @@ let s:ty_syntax_keywords = {
     \ ,                "pub"
     \ ,                "import"
     \ ,                "bench"]
-    \ , 'tyExecution': ["return"
-    \ ,                  "break"
-    \ ,                  "continue"]
     \ , 'tyMacro': ["defer"
     \ ,              "errdefer"
     \ ,              "async"
@@ -77,7 +79,6 @@ let s:ty_syntax_keywords = {
     \ ,              "resume"
     \ ,              "export"
     \ ,              "macro"
-    \ ,              "catch"
     \ ,              "extern"]
     \ }
 
@@ -139,7 +140,7 @@ highlight default link tyCharacter Character
 highlight default link tyEscape Special
 highlight default link tyEscapeUnicode tyEscape
 highlight default link tyEscapeError Error
-highlight default link tyBoolean Boolean
+highlight default link tyVals Boolean
 highlight default link tyNumber Number
 highlight default link tyArrowCharacter tyOperator
 highlight default link tyOperator Operator
