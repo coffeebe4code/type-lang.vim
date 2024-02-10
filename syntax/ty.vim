@@ -48,6 +48,7 @@ let s:ty_syntax_keywords = {
     \ ,               "break"
     \ ,               "continue"]
     \ , 'tyStructure': ["struct"
+    \ ,                  "tag"
     \ ,                  "error"
     \ ,                  "self"
     \ ,                  "packed"
